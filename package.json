@@ -7,9 +7,9 @@
     "test": "tests"
   },
   "scripts": {
-    "start": "NODE_ENV=prod node src",
-    "dev": "NODE_ENV=dev nodemon src",
-    "test": "NODE_ENV=test jest --watch"
+    "start": "cross-env NODE_ENV=prod node src",
+    "dev": "cross-env NODE_ENV=dev nodemon src",
+    "test": "cross-env NODE_ENV=test jest "
   },
   "repository": {
     "type": "git",
@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "compression": "^1.7.4",
+    "cross-env": "^7.0.3",
     "env2": "^2.2.2",
     "express": "^4.17.3",
     "pg": "^8.7.3"

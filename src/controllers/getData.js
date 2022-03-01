@@ -1,3 +1,12 @@
-const getData = (req, res) => {};
+const postData = require('../database/queries/postData');
+const getDataFromDB = require('../database/queries/getData');
+const getData = (req, res) => {
+  postData(req.body);
+  getDataFromDB()
+    .then((data) => {
+      res.json(data.rows);
+    })
+    .catch(console.log);
+};
 
 module.exports = getData;

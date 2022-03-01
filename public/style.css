@@ -6,6 +6,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Fredoka', sans-serif;
+
 }
 
 .container {
@@ -45,7 +47,7 @@ nav {
   background: white;
   box-shadow: 0 0 0 0;
   color: var(--main-color);
-  box-shadow: 0 0 20px 9px #eee;
+  box-shadow: 0 0 5px 5px #eee;
   padding: 1rem;
 }
 
@@ -53,7 +55,18 @@ nav .title {
   flex: 1;
   color: rgb(13, 64, 116);
 }
-
+nav .select-box{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 350px;
+}
+nav .select-box  select{
+  height: 100%;
+  border: 1px solid #eee;
+  padding: 5px;
+  outline: none;
+}
 nav .search-form {
   display: flex;
   flex: 1;
@@ -71,29 +84,26 @@ nav .search-form {
 
 nav .search-form .search-input {
   flex: 1;
-  box-shadow: 0 0 20px 5px #eee;
-}
-nav .search-form .search-btn {
-  cursor: pointer;
-  background-color: var(--main-color);
-  font-weight: bold;
-  color: white;
+  border: 1px solid #eee;
 }
 
 .add-member-form {
   display: flex;
   justify-content: space-evenly;
   margin: 0 auto;
-  width: 80%;
+  width: 83%;
   margin-top: 3rem;
-  flex-wrap: wrap;
+  padding: 10px;
+
 }
 
 .add-member-form .input {
-  width: 40%;
-  margin: 10px;
+  width: 30%;
+  margin-right: 10px;
   padding: 0.5rem;
   outline: none;
+  border: 1px solid #eee;
+
 }
 
 .add-user-btn {
@@ -120,7 +130,7 @@ nav .search-form .search-btn {
 table {
   width: 100%;
   border-spacing: 0px;
-  box-shadow: rgb(0 0 0 / 25%) 0px 17px 10px -12px;
+  box-shadow: rgba(139, 136, 136, 0.25) 0px 17px 10px -12px;
   border-radius: 10px;
 }
 
@@ -134,17 +144,17 @@ th {
   display: flex;
   justify-content: flex-end;
 }
-.content .btns button {
+ button {
   border: none;
   padding: 7px;
   border-radius: 3px;
   background-color: var(--main-color);
-  width: 70px;
+  width: 100px;
   margin-left: 10px;
   color: white;
   font-family: 'Fredoka', sans-serif;
   cursor: pointer;
-  font-size: 18px;
+
 }
 .content .btns button:hover {
   transform: scale(1.2);
