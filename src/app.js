@@ -11,10 +11,10 @@ const app = express();
 app.use(compression());
 app.disable('x-powered-by');
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 
 app.use(router);
 
 app.use(express.static(join(__dirname, '..', 'public')));
-app.set('port', 3000);
+app.set('port', 3030);
 module.exports = app;

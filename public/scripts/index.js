@@ -8,7 +8,6 @@ const date = document.querySelector('.date-input');
 addUserBtn.addEventListener('click', () => {
   const user = {
     name: name.value,
-    program: program.value,
     phone: phone.value,
     date: date.value,
   };
