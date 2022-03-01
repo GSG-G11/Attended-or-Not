@@ -76,7 +76,6 @@ nav .search-form .search-input {
 nav .search-form .search-btn {
   cursor: pointer;
   background-color: var(--main-color);
-
   font-weight: bold;
   color: white;
 }
