@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
 :root {
-  --main-color : rgb(13, 64, 116)
+  --main-color: rgb(13, 64, 116);
 }
 * {
   margin: 0;
@@ -37,7 +37,79 @@
   }
 }
 
-.content{
+/* Nav Section */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  box-shadow: 0 0 0 0;
+  color: var(--main-color);
+  box-shadow: 0 0 20px 9px #eee;
+  padding: 1rem;
+}
+
+nav .title {
+  flex: 1;
+  color: rgb(13, 64, 116);
+}
+
+nav .search-form {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+:is(nav .search-form) .search-input,
+.search-btn {
+  padding: 0.8rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+nav .search-form .search-input {
+  flex: 1;
+  box-shadow: 0 0 20px 5px #eee;
+}
+nav .search-form .search-btn {
+  cursor: pointer;
+  background-color: var(--main-color);
+
+  font-weight: bold;
+  color: white;
+}
+
+.add-member-form {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  width: 80%;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.add-member-form .input {
+  width: 40%;
+  margin: 10px;
+  padding: 0.5rem;
+  outline: none;
+}
+
+.add-user-btn {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  cursor: pointer;
+  background-color: var(--main-color);
+  font-weight: bold;
+  color: white;
+  padding: 0.8rem;
+  outline: none;
+  border-radius: 5px;
+}
+.content {
   margin-top: 50px;
   display: flex;
   justify-content: center;
@@ -46,14 +118,15 @@
   text-align: center;
   border-spacing: 0;
 }
-table{
+table {
   width: 100%;
   border-spacing: 0px;
   box-shadow: rgb(0 0 0 / 25%) 0px 17px 10px -12px;
   border-radius: 10px;
 }
 
-.content table td , th{
+.content table td,
+th {
   border: #eee solid 0.3px;
   padding: 15px;
   font-size: 18px;
@@ -61,10 +134,8 @@ table{
 .content .btns {
   display: flex;
   justify-content: flex-end;
-  
-  
 }
-.content .btns button{
+.content .btns button {
   border: none;
   padding: 7px;
   border-radius: 3px;
@@ -76,6 +147,6 @@ table{
   cursor: pointer;
   font-size: 18px;
 }
-.content .btns button:hover{
+.content .btns button:hover {
   transform: scale(1.2);
 }
