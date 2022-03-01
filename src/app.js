@@ -1,9 +1,10 @@
-require('env2')('.env');
-const { join } = require('path');
-const express = require('express');
-
-const router = express.Router();
 const compression = require('compression');
+const express = require('express');
+require('env2')('.env');
+
+const { join } = require('path');
+
+const router = require('./routes');
 
 const app = express();
 
@@ -12,7 +13,8 @@ app.disable('x-powered-by');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+app.use(router);
+
 app.use(express.static(join(__dirname, '..', 'public')));
 app.set('port', 3000);
-app.use(router);
-module.exports = { router, app };
+module.exports = app;
