@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+:root {
+  --main-color : rgb(13, 64, 116)
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-body {
 }
 
 .container {
@@ -33,4 +35,47 @@ body {
   .container {
     width: 1150px;
   }
+}
+
+.content{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Fredoka', sans-serif;
+  text-align: center;
+  border-spacing: 0;
+}
+table{
+  width: 100%;
+  border-spacing: 0px;
+  box-shadow: rgb(0 0 0 / 25%) 0px 17px 10px -12px;
+  border-radius: 10px;
+}
+
+.content table td , th{
+  border: #eee solid 0.3px;
+  padding: 15px;
+  font-size: 18px;
+}
+.content .btns {
+  display: flex;
+  justify-content: flex-end;
+  
+  
+}
+.content .btns button{
+  border: none;
+  padding: 7px;
+  border-radius: 3px;
+  background-color: var(--main-color);
+  width: 70px;
+  margin-left: 10px;
+  color: white;
+  font-family: 'Fredoka', sans-serif;
+  cursor: pointer;
+  font-size: 18px;
+}
+.content .btns button:hover{
+  transform: scale(1.2);
 }
