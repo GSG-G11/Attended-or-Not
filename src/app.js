@@ -16,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(router);
 
 const port = process.env.PORT || 3000;
+
 app.use(express.static(join(__dirname, '..', 'public')));
 app.set('port', port);
 module.exports = app;
