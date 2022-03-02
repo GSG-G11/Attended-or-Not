@@ -14,7 +14,7 @@ CREATE TABLE members (
     id serial PRIMARY KEY ,
     name VARCHAR(50) NOT NULL ,
     phone VARCHAR(20) ,
-    date date NOT NULL ,
+    date VARCHAR(20) NOT NULL ,
     program_id INT	REFERENCES program(id) ON UPDATE CASCADE
 
 );
