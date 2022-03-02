@@ -1,13 +1,12 @@
-const request = (url, user) => {
-  fetch(url, {
+const request = (url, obj) => {
+ return fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(user),
+    body: JSON.stringify(obj),
   })
     .then((res) => res.json())
-    .then((data) => console.log(data));
 };
 
 export default request;

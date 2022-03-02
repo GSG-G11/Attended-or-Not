@@ -11,5 +11,5 @@ addUserBtn.addEventListener('click', () => {
     phone: phone.value,
     date: date.value,
   };
-  request('/add_user', user);
+ console.log( request('/add_user', user) , 1)
 });

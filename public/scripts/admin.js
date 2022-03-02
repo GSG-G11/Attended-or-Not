@@ -10,5 +10,5 @@ addProgramBtn.addEventListener('click', () => {
     sessions: sessions.value,
     time: time.value,
   };
-  request('/add_program', program);
+  request('/add_program', program)
 });

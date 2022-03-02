@@ -4,6 +4,7 @@ const getData = (req, res) => {
   postData(req.body);
   getDataFromDB()
     .then((data) => {
+      console.log(data)
       res.json(data.rows);
     })
     .catch(console.log);
