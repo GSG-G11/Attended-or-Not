@@ -3,7 +3,7 @@ const addUserBtn = document.querySelector('.add-user-btn');
 const name = document.querySelector('.name-input');
 const phone = document.querySelector('.phone-input');
 const date = document.querySelector('.date-input');
-const program = document.querySelector('#Program');
+const programSelect = document.querySelector('#programs');
 
 addUserBtn.addEventListener('click', () => {
   const user = {
@@ -11,5 +11,16 @@ addUserBtn.addEventListener('click', () => {
     phone: phone.value,
     date: date.value,
   };
- console.log( request('/add_user', user) , 1)
+  request('/add_user', user);
 });
+
+fetch('/get_program')
+  .then((data) => data.json())
+  .then((data) => {
+    data.map((program) => {
+      const option = document.createElement('option');
+      option.value = program.name;
+      option.textContent = program.name;
+      programSelect.append(option);
+    });
+  });
