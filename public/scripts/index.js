@@ -17,8 +17,6 @@ fetch('/get_program')
     });
   });
 
-fetch('/member').then(data.json()).then(console.log);
-
 addUserBtn.addEventListener('click', () => {
   const isValid = name.value.trim() || phone.value.trim() || date.value.trim();
   if (!isValid) {
