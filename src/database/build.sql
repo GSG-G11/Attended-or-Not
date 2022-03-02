@@ -13,7 +13,7 @@ CREATE TABLE program (
 CREATE TABLE members (
     id serial PRIMARY KEY ,
     name VARCHAR(50) NOT NULL ,
-    phone int ,
+    phone VARCHAR(20) ,
     date date NOT NULL ,
     program_id INT	REFERENCES program(id) ON UPDATE CASCADE
 
