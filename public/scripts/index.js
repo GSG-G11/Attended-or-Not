@@ -6,6 +6,14 @@ const date = document.querySelector('.date-input');
 const programSelect = document.querySelector('#programs');
 const table = document.querySelector('table');
 
+const createEl = (tag, parent, arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    const el = document.createElement(tag);
+    el.textContent = arr[i];
+    parent.append(el);
+  }
+};
+
 fetch('/get_program')
   .then((data) => data.json())
   .then((data) => {
@@ -17,6 +25,33 @@ fetch('/get_program')
     });
   });
 
+fetch('/members')
+  .then((data) => data.json())
+  .then((data) => {
+    console.log(data);
+    return data.map((obj) => {
+      const Arr = Object.values(obj);
+      const row = document.createElement('tr');
+      createEl('td', row, Arr);
+
+      const btn = document.createElement('button');
+      const td = document.createElement('td');
+      btn.textContent = 'Delete';
+      btn.id = obj.id;
+      btn.className = 'deleteBtn';
+      td.append(btn);
+      row.append(td);
+
+      // delete member
+      btn.addEventListener('click', (e) => {
+        const id = { id: e.target.id };
+        btn.parentElement.parentElement.remove();
+        deleteMember(id);
+      });
+
+      table.append(row);
+    });
+  });
 addUserBtn.addEventListener('click', () => {
   const isValid = name.value.trim() || phone.value.trim() || date.value.trim();
   if (!isValid) {
@@ -32,13 +67,6 @@ addUserBtn.addEventListener('click', () => {
     programId: programSelect.value,
   };
 
-  const createEl = (tag, parent, arr) => {
-    for (let i = 0; i < arr.length; i++) {
-      const el = document.createElement(tag);
-      el.textContent = arr[i];
-      parent.append(el);
-    }
-  };
   const mainRow = document.createElement('tr');
 
   createEl('th', mainRow, ['id', 'name', 'phone', 'date', 'program', 'session', 'Hours', 'action']);

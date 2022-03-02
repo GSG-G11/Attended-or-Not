@@ -11,7 +11,9 @@ if (!dbURL) throw new Error('no db url');
 
 const option = {
   connectionString: dbURL,
-  ssl: false,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 };
 
 module.exports = new Pool(option);

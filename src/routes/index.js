@@ -1,13 +1,13 @@
-const {join} = require('path');
+const { join } = require('path');
 const express = require('express');
 const getPrograms = require('../controllers/getPrograms');
 const router = express.Router();
-const {getDataFromProgram ,getDataFromUser} = require('../controllers/getData');
+const { getDataFromProgram, getDataFromUser } = require('../controllers/getData');
 const { notFoundError, serverError } = require('../controllers/error');
 const { removeMember } = require('../controllers/removeMember');
+const getMembers = require('../database/queries/getMembers');
 
-router.use(express.static(join(__dirname, '..','..', 'public')));
-
+router.use(express.static(join(__dirname, '..', '..', 'public')));
 
 router.post('/add_user', getDataFromUser);
 
@@ -17,6 +17,7 @@ router.get('/get_program', getPrograms);
 
 router.delete('/member', removeMember);
 
+router.get('/members', (req, res) => getMembers().then((data) => res.send(data.rows)));
 
 router.use(notFoundError);
 
