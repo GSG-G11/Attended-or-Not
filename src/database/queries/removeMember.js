@@ -1,8 +1,5 @@
 const connection = require('../config/connection');
-const removeMemberFromDb = (id) =>
-  connection.query({
-    text: 'delete from members where id = $1',
-    values: [id],
-  });
+
+const removeMemberFromDb = (id) => connection.query(`delete from members where id = ${id}`);
 
 module.exports = removeMemberFromDb;
