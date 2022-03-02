@@ -3,11 +3,11 @@ const express = require('express');
 const getPrograms = require('../controllers/getPrograms');
 const router = express.Router();
 
-const getDataFromPublic = require('../controllers/getData');
+const {getDataFromProgram ,getDataFromUser} = require('../controllers/getData');
 
-router.post('/add_user', getDataFromPublic);
+router.post('/add_user', getDataFromUser);
 
-router.post('/add_program', getDataFromPublic);
+router.post('/add_program',getDataFromProgram );
 
 router.get('/get_program', getPrograms);
 

@@ -7,7 +7,7 @@ CREATE TABLE program (
     id serial PRIMARY KEY ,
     time int ,
     num_session int ,
-    name VARCHAR(50) NOT NULL 
+    name_program VARCHAR(50) NOT NULL 
 );
 
 CREATE TABLE members (

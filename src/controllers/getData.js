@@ -1,9 +1,18 @@
-const postData = require('../database/queries/postData');
-const getDataFromDB = require('../database/queries/getData');
+const {postData , postDataToMembers} = require('../database/queries/postData');
+const {getData , getMember} = require('../database/queries/getData');
 
-const getData = (req, res) => {
+const getDataFromProgram = (req, res) => {
   postData(req.body);
-  getDataFromDB()
+  getData()
+    .then((data) => {
+      console.log(data);
+      res.json(data.rows);
+    })
+    .catch(console.log);
+};
+const getDataFromUser = (req, res) => {
+  postDataToMembers(req.body);
+  getMember()
     .then((data) => {
       console.log(data);
       res.json(data.rows);
@@ -11,4 +20,4 @@ const getData = (req, res) => {
     .catch(console.log);
 };
 
-module.exports = getData;
+module.exports = {getDataFromProgram ,getDataFromUser};
