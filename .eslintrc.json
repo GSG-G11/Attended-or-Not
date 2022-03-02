@@ -12,5 +12,6 @@
         "sourceType": "module"
     },
     "rules": {
+        "import/extensions": [<severity>, "never" | "always" | "ignorePackages"]
     }
 }

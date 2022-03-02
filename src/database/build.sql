@@ -6,6 +6,7 @@ DROP TABLE IF EXISTS  members , program CASCADE ;
 CREATE TABLE program (
     id serial PRIMARY KEY ,
     time int ,
+    num_session int ,
     name VARCHAR(50) NOT NULL 
 );
 
