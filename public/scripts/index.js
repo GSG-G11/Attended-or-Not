@@ -5,22 +5,26 @@ const phone = document.querySelector('.phone-input');
 const date = document.querySelector('.date-input');
 const programSelect = document.querySelector('#programs');
 
-addUserBtn.addEventListener('click', () => {
-  const user = {
-    name: name.value,
-    phone: phone.value,
-    date: date.value,
-  };
-  request('/add_user', user);
-});
-
 fetch('/get_program')
   .then((data) => data.json())
   .then((data) => {
     data.map((program) => {
       const option = document.createElement('option');
-      option.value = program.name;
-      option.textContent = program.name;
+      option.value = program.id;
+      option.textContent = program.name_program;
       programSelect.append(option);
-    });
+    }) ; 
+    
   });
+
+
+  addUserBtn.addEventListener('click', () => {
+  const user = {
+    name: name.value,
+    phone: phone.value,
+    date: date.value,
+    programId :  programSelect.value
+
+  };
+  request('/add_user', user).then(console.log);
+});
