@@ -28,7 +28,10 @@ fetch('/get_program')
 fetch('/members')
   .then((data) => data.json())
   .then((data) => {
-    console.log(data);
+    const mainRow = document.createElement('tr');
+    createEl('th', mainRow, ['id', 'name', 'phone', 'date', 'program', 'session', 'Hours', 'action']);
+    table.append(mainRow);
+
     return data.map((obj) => {
       const Arr = Object.values(obj);
       const row = document.createElement('tr');
@@ -53,10 +56,9 @@ fetch('/members')
     });
   });
 addUserBtn.addEventListener('click', () => {
-  const isValid = name.value.trim() || phone.value.trim() || date.value.trim();
-  if (!isValid) {
-    return;
-  }
+  const isValid = name.value.trim() && phone.value.trim() && date.value.trim();
+
+  if (!isValid) return;
 
   table.innerText = '';
 
@@ -73,7 +75,6 @@ addUserBtn.addEventListener('click', () => {
   table.append(mainRow);
 
   request('/add_user', user).then((data) => {
-    console.log(data);
     return data.map((obj) => {
       console.log(obj.id);
       const Arr = Object.values(obj);
