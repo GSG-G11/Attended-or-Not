@@ -28,7 +28,10 @@ fetch('/get_program')
 fetch('/members')
   .then((data) => data.json())
   .then((data) => {
-    console.log(data);
+    const mainRow = document.createElement('tr');
+    createEl('th', mainRow, ['id', 'name', 'phone', 'date', 'program', 'session', 'Hours', 'action']);
+    table.append(mainRow);
+
     return data.map((obj) => {
       const Arr = Object.values(obj);
       const row = document.createElement('tr');
