@@ -1,7 +1,9 @@
 const { join } = require('path');
 const express = require('express');
-const getPrograms = require('../controllers/getPrograms');
+
 const router = express.Router();
+
+const getPrograms = require('../controllers/getPrograms');
 const { getDataFromProgram, getDataFromUser } = require('../controllers/getData');
 const { notFoundError, serverError } = require('../controllers/error');
 const { removeMember } = require('../controllers/removeMember');

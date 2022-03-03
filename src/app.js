@@ -1,8 +1,8 @@
-const compression = require('compression');
-const express = require('express');
-require('env2')('.env');
-
 const { join } = require('path');
+
+const express = require('express');
+const compression = require('compression');
+require('env2')('.env');
 
 const router = require('./routes');
 
