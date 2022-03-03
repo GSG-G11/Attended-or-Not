@@ -56,10 +56,9 @@ fetch('/members')
     });
   });
 addUserBtn.addEventListener('click', () => {
-  const isValid = name.value.trim() || phone.value.trim() || date.value.trim();
-  if (!isValid) {
-    return;
-  }
+  const isValid = name.value.trim() && phone.value.trim() && date.value.trim();
+
+  if (!isValid) return;
 
   table.innerText = '';
 
@@ -76,7 +75,6 @@ addUserBtn.addEventListener('click', () => {
   table.append(mainRow);
 
   request('/add_user', user).then((data) => {
-    console.log(data);
     return data.map((obj) => {
       console.log(obj.id);
       const Arr = Object.values(obj);
